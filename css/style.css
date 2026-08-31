@@ -559,3 +559,45 @@ footer {
   .about-avatar { width: 140px; height: 140px; font-size: 3.5rem; }
   .about-photo  { width: 140px; height: 140px; }
 }
+
+/* ============================================
+   FORM STATUS 
+   ============================================ */
+.form-status {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  min-height: 1.2rem;
+}
+
+.form-status--success {
+  color: var(--accent2);
+}
+
+.form-status--error {
+  color: #f76c6c;
+}
+/* ============================================
+   SKILLS — subtítulos e cards "aprendendo"
+   ============================================ */
+.skills-subtitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent2);
+  margin: 0 0 1rem;
+}
+ 
+.skills-subtitle--learning {
+  margin-top: 3rem;
+  color: var(--muted);
+}
+ 
+.skill-card--learning {
+  opacity: 0.85;
+}
+ 
+.skill-card--learning .skill-bar {
+  background: var(--muted);
+}
+ 

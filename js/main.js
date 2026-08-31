@@ -1,6 +1,6 @@
 AOS.init({
   duration: 600,
-  once: true, 
+  once: true,
   offset: 60
 });
 
@@ -67,4 +67,58 @@ menuBtn.addEventListener('click', () => {
 function closeMenu() {
   mobileMenu.classList.remove('open');
   menuBtn.textContent = '☰';
+}
+
+const contactForm  = document.getElementById('contactForm');
+const formStatus   = document.getElementById('formStatus');
+const submitBtn    = document.getElementById('formSubmitBtn');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault(); 
+
+    const endpoint = contactForm.getAttribute('data-endpoint');
+
+    if (!endpoint || endpoint.includes('SEU_ID_AQUI')) {
+      showStatus('Formulário ainda não configurado. Troque SEU_ID_AQUI pelo ID do Formspree.', 'error');
+      return;
+    }
+
+    const formData = new FormData(contactForm);
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+    showStatus('', '');
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        showStatus('Mensagem enviada com sucesso! Retornarei o contato em breve.', 'success');
+        contactForm.reset();
+      } else {
+        const data = await response.json().catch(() => null);
+        const errorMsg = data && data.errors
+          ? data.errors.map(e => e.message).join(', ')
+          : 'Não foi possível enviar. Tente novamente ou use o e-mail direto.';
+        showStatus(errorMsg, 'error');
+      }
+    } catch (err) {
+      showStatus('Erro de conexão. Verifique sua internet e tente novamente.', 'error');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar mensagem';
+    }
+  });
+}
+
+function showStatus(message, type) {
+  if (!formStatus) return;
+  formStatus.textContent = message;
+  formStatus.className = 'form-status';
+  if (type) formStatus.classList.add(`form-status--${type}`);
 }
