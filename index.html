@@ -19,7 +19,7 @@
             <li><a href="#projetos">Projetos</a></li>
             <li><a href="#contato">Contato</a></li>
         </ul>
-        <button class="nav-menu-btn" id="menuBtn">☰</button>
+        <button class="nav-menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
     </nav>
 
     <div class="mobile-menu" id="mobileMenu">
@@ -29,7 +29,7 @@
         <a href="#contato" onclick="closeMenu()">Contato</a>
     </div>
 
-    <div class="hero">
+    <header class="hero">
         <div class="hero-grid"></div>
         <div class="hero-content">
 
@@ -56,7 +56,7 @@
             </div>
 
         </div>
-    </div>
+    </header>
 
     <section id="sobre">
         <p class="section-label">Quem sou eu</p>
@@ -154,7 +154,7 @@
                 <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="skill-icon">🧪</div>
                     <div class="skill-name">Testes de API</div>
-                    <div class="skill-desc">Postman</div>
+                    <div class="skill-desc">Postman, MockMvc</div>
                     <div class="skill-bar-wrap">
                         <div class="skill-bar" data-width="55"></div>
                     </div>
@@ -222,9 +222,9 @@
                 <div class="skill-card skill-card--learning" data-aos="fade-up" data-aos-delay="240">
                     <div class="skill-icon">✅</div>
                     <div class="skill-name">JUnit & Mockito</div>
-                    <div class="skill-desc">Testes automatizados</div>
+                    <div class="skill-desc">Testes unitários e de integração</div>
                     <div class="skill-bar-wrap">
-                        <div class="skill-bar" data-width="10"></div>
+                        <div class="skill-bar" data-width="30"></div>
                     </div>
                 </div>
 
@@ -259,25 +259,19 @@
                 </div>
                 <div class="project-links">
                     <a class="project-link" href="https://github.com/Kauapereira10/library-management-system-java"
-                        target="_blank">🐙 GitHub</a>
+                        target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
                 </div>
             </div>
 
             <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                 <span class="project-badge">🔄 Em evolução</span>
-                <div class="project-title">Spring Boot Practice Projects</div>
+                <div class="project-title">Spring Boot Project ToDo-List</div>
                 <p class="project-desc">
-                    Coleção de projetos práticos desenvolvidos com Spring Boot,
-                    explorando APIs REST, arquitetura em camadas, persistência com
-                    JPA/Hibernate e boas práticas de desenvolvimento backend.
-
-                    Inclui o To-Do List API, uma aplicação de gerenciamento de tarefas
-                    com CRUD completo, filtros por status e prioridade, controle de
-                    transições de status e identificação de visitantes por cookies
-                    utilizando UUID, associando cada visitante às suas próprias tarefas.
-
-                    Novas funcionalidades e projetos estão sendo desenvolvidos
-                    continuamente.
+                    Sistema web para gerenciamento de tarefas desenvolvido com Spring Boot, estruturado em arquitetura em camadas e boas práticas de desenvolvimento.
+                    <br><br>
+                    A aplicação conta com CRUD completo, filtros por status e prioridade, regras de validação para transições de status e isolamento de dados por sessão — identificando cada visitante via cookies e UUID para que cada usuário gerencie suas próprias tarefas sem necessidade de login tradicional.
+                    <br><br>
+                    Novas funcionalidades, testes automatizados e melhorias na interface estão sendo implementados continuamente.
                 </p>
                 <div class="project-tech">
                     <span class="tech-tag">Java 21</span>
@@ -292,21 +286,18 @@
                     <span class="tech-tag">Maven</span>
                 </div>
                 <div class="project-links">
-                    <a class="project-link" href="https://github.com/Kauapereira10/projetos-spring" target="_blank"
-                        rel="noopener noreferrer">
-                        🐙 GitHub
-                    </a>
+                    <a class="project-link" href="https://github.com/Kauapereira10/todolist" target="_blank"
+                        rel="noopener noreferrer">🐙 GitHub</a>
                 </div>
             </div>
 
-            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                <span class="project-badge">🔄 Em evolução</span>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <span class="project-badge">🔄 Aprendizado continuo</span>
                 <div class="project-title">Spring Boot Practice Projects</div>
                 <p class="project-desc">
                     Coleção de mini projetos práticos com Spring Boot, cobrindo APIs REST,
                     arquitetura MVC, persistência com JPA/Hibernate e boas práticas de
-                    backend. Inclui To-Do List API com CRUD completo, com novos projetos
-                    sendo adicionados continuamente.
+                    backend, com novos desafios sendo adicionados continuamente.
                 </p>
                 <div class="project-tech">
                     <span class="tech-tag">Java</span>
@@ -317,8 +308,8 @@
                     <span class="tech-tag">Maven</span>
                 </div>
                 <div class="project-links">
-                    <a class="project-link" href="https://github.com/Kauapereira10/projetos-spring" target="_blank">🐙
-                        GitHub</a>
+                    <a class="project-link" href="https://github.com/Kauapereira10/projetos-spring" target="_blank"
+                        rel="noopener noreferrer">🐙 GitHub</a>
                 </div>
             </div>
 
@@ -342,7 +333,8 @@
 
                     <div class="contact-links">
 
-                        <a class="contact-item" href="https://github.com/Kauapereira10" target="_blank">
+                        <a class="contact-item" href="https://github.com/Kauapereira10" target="_blank"
+                            rel="noopener noreferrer">
                             <span class="contact-icon">🐙</span>
                             <div>
                                 <div class="contact-label">GitHub</div>
@@ -350,7 +342,8 @@
                             </div>
                         </a>
 
-                        <a class="contact-item" href="https://www.linkedin.com/in/kauaborges/" target="_blank">
+                        <a class="contact-item" href="https://www.linkedin.com/in/kauaborges/" target="_blank"
+                            rel="noopener noreferrer">
                             <span class="contact-icon">💼</span>
                             <div>
                                 <div class="contact-label">LinkedIn</div>
@@ -358,15 +351,15 @@
                             </div>
                         </a>
 
-                        <a class="contact-item" href="mailto:borgeskaua1210@email.com">
+                        <a class="contact-item" href="mailto:borgeskaua1210@gmail.com">
                             <span class="contact-icon">📧</span>
                             <div>
                                 <div class="contact-label">Email</div>
-                                <div class="contact-value">borgeskaua1210@email.com</div>
+                                <div class="contact-value">borgeskaua1210@gmail.com</div>
                             </div>
                         </a>
 
-                        <a class="contact-item" href="tel:+5511987979722">
+                        <a class="contact-item" href="tel:+5511937502925">
                             <span class="contact-icon">📞</span>
                             <div>
                                 <div class="contact-label">Telefone</div>
@@ -377,19 +370,19 @@
                     </div>
                 </div>
 
-                <form action="https://formspree.io/f/xjyvggld" id="contactForm" class="contact-form"
+                <form action="https://formspree.io/f/xjyvggld" method="POST" id="contactForm" class="contact-form"
                     data-endpoint="https://formspree.io/f/xjyvggld">
                     <div class="form-group">
-                        <label>Nome</label>
-                        <input type="text" name="name" placeholder="Seu nome completo" required>
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
                     </div>
                     <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" name="email" placeholder="Seu melhor email" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Seu melhor email" required>
                     </div>
                     <div class="form-group">
-                        <label>Mensagem</label>
-                        <textarea name="message" placeholder="Como posso te ajudar" required></textarea>
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" placeholder="Como posso te ajudar?" required></textarea>
                     </div>
                     <button class="btn btn-primary btn-full" type="submit" id="formSubmitBtn">Enviar mensagem</button>
 
@@ -403,7 +396,6 @@
     <footer>
         <p>Feito por Kauã Borges · 2026</p>
     </footer>
-
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="js/main.js"></script>
