@@ -15,6 +15,8 @@
         <a class="nav-logo" href="#">KB<span>.</span></a>
         <ul class="nav-links">
             <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#carreira">Carreira</a></li>
+            <li><a href="#formacao">Formação</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projetos">Projetos</a></li>
             <li><a href="#contato">Contato</a></li>
@@ -24,6 +26,8 @@
 
     <div class="mobile-menu" id="mobileMenu">
         <a href="#sobre" onclick="closeMenu()">Sobre</a>
+        <a href="#carreira" onclick="closeMenu()">Carreira</a>
+        <a href="#formacao" onclick="closeMenu()">Formação</a>
         <a href="#skills" onclick="closeMenu()">Skills</a>
         <a href="#projetos" onclick="closeMenu()">Projetos</a>
         <a href="#contato" onclick="closeMenu()">Contato</a>
@@ -97,6 +101,49 @@
         </div>
     </section>
 
+    <section id="carreira">
+        <p class="section-label">Minha trajetória</p>
+        <h2 class="section-title">Carreira</h2>
+        <div class="section-divider"></div>
+
+        <ol class="career" data-aos="fade">
+            <li>
+                <small>julho/2023 – setembro/2024</small>
+                <h3>Aprendiz da Qualidade</h3>
+                <p>Schneider Electric <span class="tag">15 meses</span></p>
+                <p>Relatórios, análise de dados e apoio em auditorias. Foi onde aprendi a olhar um processo e ver onde ele pode falhar.</p>
+            </li>
+            <li>
+                <small>março/2024 – atual</small>
+                <h3>Agente escolar</h3>
+                <p>E. E. Maria Juvenal Homem de Mello <span class="tag">1 ano</span></p>
+                <p>Rotina com muitas pessoas e processos ao mesmo tempo, que treinou minha organização e comunicação.</p>
+            </li>
+            <li>
+                <small>próximo passo</small>
+                <h3>Estágio em back-end</h3>
+                <p>Aberto a oportunidades</p>
+                <p>Usar Java e Spring Boot dentro de um time de desenvolvimento e crescer com código em produção.</p>
+            </li>
+        </ol>
+    </section>
+
+    <section id="formacao">
+        <p class="section-label">Onde estudo</p>
+        <h2 class="section-title">Formação</h2>
+        <div class="section-divider"></div>
+
+        <div class="projects-grid">
+            <div class="project-card featured" data-aos="fade-up">
+                <span class="project-badge">🎓 Graduação</span>
+                <div class="project-title">Análise e Desenvolvimento de Sistemas</div>
+                <p class="project-desc">UNINOVE · Tecnólogo. Programação, banco de dados, engenharia de software e projetos em equipe.</p>
+                <div class="project-tech"><span class="tech-tag">Janeiro/2025 – em andamento</span></div>
+            </div>
+        </div>
+        
+    </section>
+
     <section id="skills" class="section-alt">
         <div class="section-inner">
             <p class="section-label">O que sei fazer</p>
@@ -147,7 +194,7 @@
                     <div class="skill-name">Collections Framework</div>
                     <div class="skill-desc">List, Set, Map, Streams</div>
                     <div class="skill-bar-wrap">
-                        <div class="skill-bar" data-width="55"></div>
+                        <div class="skill-bar" data-width="60"></div>
                     </div>
                 </div>
 
@@ -166,15 +213,6 @@
                     <div class="skill-desc">Versionamento, pull requests</div>
                     <div class="skill-bar-wrap">
                         <div class="skill-bar" data-width="80"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="560">
-                    <div class="skill-icon">🔐</div>
-                    <div class="skill-name">Spring Security</div>
-                    <div class="skill-desc">Autenticação, autorização</div>
-                    <div class="skill-bar-wrap">
-                        <div class="skill-bar" data-width="25"></div>
                     </div>
                 </div>
 
@@ -224,7 +262,16 @@
                     <div class="skill-name">JUnit & Mockito</div>
                     <div class="skill-desc">Testes unitários e de integração</div>
                     <div class="skill-bar-wrap">
-                        <div class="skill-bar" data-width="30"></div>
+                        <div class="skill-bar" data-width="25"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card skill-card--learning" data-aos="fade-up" data-aos-delay="240">
+                    <div class="skill-icon">🔐</div>
+                    <div class="skill-name">Spring Security</div>
+                    <div class="skill-desc">Autenticação, autorização</div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" data-width="10"></div>
                     </div>
                 </div>
 
@@ -292,7 +339,7 @@
             </div>
 
             <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                <span class="project-badge">🔄 Aprendizado continuo</span>
+                <span class="project-badge">🔄 Aprendizado contínuo</span>
                 <div class="project-title">Spring Boot Practice Projects</div>
                 <p class="project-desc">
                     Coleção de mini projetos práticos com Spring Boot, cobrindo APIs REST,

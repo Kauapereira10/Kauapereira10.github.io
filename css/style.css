@@ -1,21 +1,18 @@
-/* ============================================
-   RESET & VARIÁVEIS
-   ✏️ EDITE as cores aqui para mudar o tema
-   ============================================ */
+/* ===== RESET & VARIÁVEIS ===== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
 
 :root {
-  --bg:           #0d0f14;   /* fundo principal        */
-  --bg2:          #13161e;   /* fundo seções alternas  */
-  --card:         #181c26;   /* cards e inputs         */
-  --border:       #252a38;   /* bordas normais         */
-  --border-hover: #3a4158;   /* bordas ao hover        */
-  --text:         #e8eaf0;   /* texto principal        */
-  --muted:        #7a8098;   /* texto secundário       */
-  --accent:       #4f8ef7;   /* azul destaque          */
-  --accent2:      #38c9a0;   /* verde destaque         */
+  --bg:           #0d0f14;
+  --bg2:          #13161e;
+  --card:         #181c26;
+  --border:       #252a38;
+  --border-hover: #3a4158;
+  --text:         #e8eaf0;
+  --muted:        #7a8098;
+  --accent:       #4f8ef7;
+  --accent2:      #38c9a0;
   --accent-glow:  rgba(79, 142, 247, 0.12);
 }
 
@@ -28,9 +25,7 @@ body {
 }
 
 
-/* ============================================
-   NAV
-   ============================================ */
+/* ===== NAV ===== */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -66,7 +61,6 @@ nav {
 }
 .nav-links a:hover { color: var(--text); }
 
-/* Botão hambúrguer (só aparece no mobile) */
 .nav-menu-btn {
   display: none;
   background: none;
@@ -76,7 +70,6 @@ nav {
   cursor: pointer;
 }
 
-/* Menu mobile */
 .mobile-menu {
   display: none;
   flex-direction: column;
@@ -98,9 +91,7 @@ nav {
 .mobile-menu a:hover { color: var(--text); }
 
 
-/* ============================================
-   HERO
-   ============================================ */
+/* ===== HERO ===== */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -150,7 +141,7 @@ nav {
 
 @keyframes pulse {
   0%, 100% { opacity: 1; }
-  50%       { opacity: 0.3; }
+  50%      { opacity: 0.3; }
 }
 
 .hero h1 {
@@ -173,7 +164,7 @@ nav {
 
 @keyframes blink {
   0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+  50%      { opacity: 0; }
 }
 
 .hero-desc {
@@ -191,9 +182,7 @@ nav {
 }
 
 
-/* ============================================
-   BOTÕES
-   ============================================ */
+/* ===== BOTÕES ===== */
 .btn {
   padding: 0.75rem 1.75rem;
   border-radius: 8px;
@@ -230,9 +219,7 @@ nav {
 .btn-full { width: 100%; justify-content: center; }
 
 
-/* ============================================
-   SEÇÕES — BASE
-   ============================================ */
+/* ===== SEÇÕES — BASE ===== */
 section {
   padding: 6rem 2rem;
   max-width: 960px;
@@ -275,28 +262,12 @@ section {
 }
 
 
-/* ============================================
-   SOBRE
-   ============================================ */
+/* ===== SOBRE ===== */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-}
-
-.about-avatar {
-  width: 200px;
-  height: 200px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 5rem;
-  font-weight: 700;
-  color: #fff;
-  margin: 0 auto;
 }
 
 .about-photo {
@@ -332,9 +303,87 @@ section {
 }
 
 
-/* ============================================
-   SKILLS
-   ============================================ */
+/* ===== CARREIRA (seta de progresso) ===== */
+#carreira, #formacao { padding-top: 0; }
+
+.career {
+  position: relative;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  padding-top: 2.5rem;
+}
+
+.career::before {                       /* linha + preenchimento */
+  content: "";
+  position: absolute;
+  top: 6px; left: 0; right: 10px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border) linear-gradient(var(--accent), var(--accent)) no-repeat;
+  background-size: 0 100%;
+  transition: background-size 1.4s ease;
+}
+.career.aos-animate::before { background-size: 75% 100%; }
+
+.career::after {                        /* ponta da seta */
+  content: "";
+  position: absolute;
+  top: -1px; right: 0;
+  border: 9px solid transparent;
+  border-left: 12px solid var(--border);
+  border-right: 0;
+}
+
+.career li { position: relative; }
+
+.career li::before {                    /* bolinha de cada etapa */
+  content: "";
+  position: absolute;
+  top: -2.5rem; left: 0;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.career li:last-child::before {         /* etapa futura: bolinha vazada */
+  background: var(--bg);
+  border: 2px dashed var(--accent);
+}
+.career li:last-child h3 { color: var(--accent); }
+
+.career small { font-size: 0.8rem; color: var(--muted); }
+.career h3    { font-size: 1.05rem; line-height: 1.3; }
+.career p     { font-size: 0.875rem; color: var(--muted); }
+.career p + p { margin-top: 0.5rem; }
+.career .tag  { display: inline-block; margin-left: 0.3rem; padding: 0.1rem 0.6rem; color: var(--accent); border-color: var(--accent); }
+
+@media (max-width: 760px) {             /* celular: a seta fica vertical */
+  .career { grid-template-columns: 1fr; gap: 2rem; padding: 0 0 1.5rem 2.25rem; }
+
+  .career::before {
+    top: 0; bottom: 10px; left: 6px; right: auto;
+    width: 4px; height: auto;
+    background-size: 100% 0;
+  }
+  .career.aos-animate::before { background-size: 100% 75%; }
+
+  .career::after {
+    top: auto; right: auto; bottom: 0; left: -1px;
+    border: 9px solid transparent;
+    border-top: 12px solid var(--border);
+    border-bottom: 0;
+  }
+
+  .career li::before { top: 0.3rem; left: -2.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .career::before { transition: none; }
+}
+
+
+/* ===== SKILLS ===== */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -373,10 +422,25 @@ section {
   transition: width 1s ease;
 }
 
+.skills-subtitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent2);
+  margin: 0 0 1rem;
+}
 
-/* ============================================
-   PROJETOS
-   ============================================ */
+.skills-subtitle--learning {
+  margin-top: 3rem;
+  color: var(--muted);
+}
+
+.skill-card--learning { opacity: 0.85; }
+.skill-card--learning .skill-bar { background: var(--muted); }
+
+
+/* ===== PROJETOS ===== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -457,9 +521,7 @@ section {
 .project-link:hover { opacity: 0.7; }
 
 
-/* ============================================
-   CONTATO
-   ============================================ */
+/* ===== CONTATO ===== */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -530,10 +592,16 @@ section {
   min-height: 120px;
 }
 
+.form-status {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  min-height: 1.2rem;
+}
+.form-status--success { color: var(--accent2); }
+.form-status--error   { color: #f76c6c; }
 
-/* ============================================
-   FOOTER
-   ============================================ */
+
+/* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 2.5rem 1rem;
@@ -543,60 +611,14 @@ footer {
 }
 
 
-/* ============================================
-   RESPONSIVO — MOBILE
-   ============================================ */
+/* ===== RESPONSIVO — MOBILE ===== */
 @media (max-width: 680px) {
   nav { padding: 1rem 1.25rem; }
 
-  /* Esconde links e mostra botão hambúrguer */
   .nav-links    { display: none; }
   .nav-menu-btn { display: block; }
 
   .about-grid   { grid-template-columns: 1fr; gap: 2rem; }
   .contact-grid { grid-template-columns: 1fr; }
-  .about-avatar { width: 140px; height: 140px; font-size: 3.5rem; }
   .about-photo  { width: 140px; height: 140px; }
 }
-
-/* ============================================
-   FORM STATUS 
-   ============================================ */
-.form-status {
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
-  min-height: 1.2rem;
-}
-
-.form-status--success {
-  color: var(--accent2);
-}
-
-.form-status--error {
-  color: #f76c6c;
-}
-/* ============================================
-   SKILLS — subtítulos e cards "aprendendo"
-   ============================================ */
-.skills-subtitle {
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent2);
-  margin: 0 0 1rem;
-}
- 
-.skills-subtitle--learning {
-  margin-top: 3rem;
-  color: var(--muted);
-}
- 
-.skill-card--learning {
-  opacity: 0.85;
-}
- 
-.skill-card--learning .skill-bar {
-  background: var(--muted);
-}
- 
